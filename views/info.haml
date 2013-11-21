@@ -1,3 +1,12 @@
 / info.haml
-%h1 nonrandom number generator
-%p generates numbers that aren't random
+
+/ info
+%h1 Personal non-random number picker.
+%p This thingy tries to pick numbers that I would pick.
+%p It goes through all the text messages I've sent since 2009, and extracts all the numbers. Then, it picks numbers based on how often I've used them in texts.
+
+%h2 
+	= @out.length.to_s + (@out.length == 1 ? " Number" : " Numbers")
+%ul 
+	- @out.each do |number|
+		%li= number
