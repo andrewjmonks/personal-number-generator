@@ -3,9 +3,27 @@
 		%h1 Personal non-random number picker.
 		%p This thingy tries to pick numbers that I would pick.
 		%p It goes through all the text messages I've sent since 2009, and extracts all the numbers. Then, it picks numbers based on how often I've used them in texts.
-	.five.columns.offset-by-one.sidebar
+		%p 
+			Check it out on
+			%a{:href => "https://github.com/andrewjmonks/personal-number-generator"} github.
 		%h2 
 			= @out.length.to_s + (@out.length == 1 ? " Number" : " Numbers")
 		%ul 
 			- @out.each do |number|
 				%li= number
+	.five.columns.offset-by-one.sidebar		
+		%h2 Credits
+		%p
+			Data from
+			%a{:href => "https://www.google.com/voice?hl=en#inbox"} Google Voice
+		%p 
+			Made with
+			%a{:href => "http://www.sinatrarb.com/"} Sinatra
+			by
+			%a{:href => "http://monks.co"} Andrew Monks
+		%p 
+			Hosted with
+			%a{:href => "https://www.heroku.com"} Heroku
+		%p 
+			Code on
+			%a{:href => "https://github.com/andrewjmonks/personal-number-generator"} Github
