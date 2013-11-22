@@ -1,5 +1,11 @@
 .container
-	.ten.columns.content
+	.five.columns.sidebar
+		%h2 
+			= @out.length.to_s + (@out.length == 1 ? " Number" : " Numbers")
+		%ul 
+			- @out.each do |number|
+				%li= number
+	.ten.columns.offset-by-one.content
 		%h1 Personal non-random number generator.
 		%p This thingy tries to pick numbers that I would pick.
 		%p It goes through all the text messages I've sent since 2009, and extracts all the numbers. Then, it picks numbers based on how often I've used them in texts.
@@ -18,9 +24,3 @@
 		%p 
 			Code on
 			%a{:href => "https://github.com/andrewjmonks/personal-number-generator"} Github
-	.five.columns.offset-by-one.sidebar
-		%h2 
-			= @out.length.to_s + (@out.length == 1 ? " Number" : " Numbers")
-		%ul 
-			- @out.each do |number|
-				%li= number
